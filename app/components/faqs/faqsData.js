@@ -1,0 +1,11 @@
+export const data = [
+    {id: 1, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 2, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 3, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 4, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 5, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 6, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 7, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    {id: 8, title: "How much do you usually charge for a website?", description: "The payment only depend of the quality and type of website ranging from a single page and multipage website which also include the type of functionality that need to be implemented."},
+    
+]
