@@ -1,0 +1,76 @@
+/* socical media */
+.contactWrapper{
+    display: flex;
+    margin-inline: auto;
+    width: fit-content;
+    gap: 2.5rem;
+    opacity: 0;
+    margin-top: 4rem;
+    animation: identifier 1s ease-in forwards;
+}
+@keyframes identifier{
+    to{
+        opacity: 1;
+    }
+}
+.contactWrapper a{
+    background: var(--color-primary);
+    color: white;
+    font-size: 1.5rem;
+    height: 5rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    place-items: center;
+}
+
+@media screen and(max-width: 600px) {
+    .contactWrapper{
+        margin-top: 6rem;
+        gap: 1.5rem;
+    }
+}
+
+
+/* contant form */
+.sociaForm{
+    display: flex;
+    gap: 2rem;
+}
+
+.form{
+    width: 30rem;
+}
+
+.formInput {
+    width: 100%;
+    background-color: #00aeff;
+    font-weight: 600; 
+    padding: 15px; 
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .mt5 {
+    margin-top: 20px; 
+    background-color: #00aeff;
+  }
+  
+  .errorMessage {
+    color: #ff0000; 
+    margin-top: 4px;
+  }
+  
+  .submitButton {
+    padding: 20px; 
+    background-color: #ffcc00;
+    font-weight: 600; 
+    color: #00aeff; 
+    margin-top: 20px; 
+    transition: background-color 0.5s, color 0.5s; 
+  }
+  
+  .submitButton:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+  }
+  
