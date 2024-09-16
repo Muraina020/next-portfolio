@@ -73,4 +73,16 @@
     background-color: #ff0000;
     color: #ffffff;
   }
+
+  @media screen and (max-width: 600px) {
+    .sociaForm{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .form{
+        width: 24rem;
+    }
+  }
   
