@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./about.module.css"
 import SectionHeader from "../components/section-header/SectionHeader"
-import AboutImage from "../assets/about.jpg"
+import AboutImage from "../assets/ceo.png"
 import Image from 'next/image'
 
 const page = () => {

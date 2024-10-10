@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './contact.module.css'
 import SectionHeader from '../components/section-header/SectionHeader'
 import Social from './Social'
+import ContactForm from './ContactForm'
 
 const page = () => {
   return (
@@ -10,37 +11,7 @@ const page = () => {
 <div className={`container ${styles.container}`}>
   <article className={styles.sociaForm}>
     <Social/>
-    <form
-    target="_blank"
-    method="POST"
-    className={styles.form}
-  >
-    {/* Name Input */}
-    <input
-      className={styles.formInput}
-      type="text"
-      placeholder="NAME"
-    />
-  
-    {/* Email Input */}
-    <input
-      className={`${styles.formInput} ${styles.mt5}`}
-      type="text"
-      placeholder="EMAIL"
-    />
-  
-    {/* Message Textarea */}
-    <textarea
-      className={`${styles.formInput} ${styles.mt5}`}
-      placeholder="MESSAGE"
-      rows="4"
-      cols="50"
-    />
-    {/* Submit Button */}
-    <button type="submit" className={styles.submitButton}>
-      SEND ME A MESSAGE
-    </button>
-  </form>
+    <ContactForm/>
   </article>
   </div>
   </section>
