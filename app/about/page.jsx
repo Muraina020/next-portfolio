@@ -13,10 +13,9 @@ const page = () => {
           <Image src={AboutImage} alt=''/>
         </article>
         <article className={styles.aboutContent}>
-          <h4>My name is Boluwatife and I am a developer</h4>
-          <p>I started my coing journey about a year ago and as a self sponsor, i have to start learning through some open source materials and online resource. </p>
-          <p>I find joy in coding and learning coding despite my finantial contraint. My dedication is actually yielding the moment i started solving some problems independently</p>
-          <p>I ma so determine to be a reknown fullstack developer in the coming year. Presently, it is so conviniet for me to code in frontend and i am gradually diving in to backend. many thanks to the platform like plp, alx, digital for all that are offering African student a scholarship to study software develoment track. </p>
+          <h4>Hi, I am Murain Sikirulah. I am a developer with three years of experience</h4>
+          <p>I started my coding journey about three years ago. And I have executed many projects which actually affirm my proficience in the latest technology. I am so convinient using React and Next.js to bring the concept into live </p>
+          <p>With my nature of fast learning ability, I can easily adapt to the emerging latest technoloy. I am commited to giving the best to whatever I do in rendering and in support to grow</p>
           <a href="../assets/cv.pdf" className={`btn primary ${styles.aboutCta}`} download rel='noopener noreferrer'>Download cv</a>
         </article>
       </div>
