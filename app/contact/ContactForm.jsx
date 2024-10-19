@@ -1,87 +1,91 @@
-"use client";
-
+'use client';
 import React, { useState } from 'react';
-import styles from "./contact.module.css";
+import styles from "./contact.module.css"
 
 const ContactForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
-  // const onSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await fetch('/api/contact', {
-  //       method: 'POST',
-  //       body: JSON.stringify({
-  //         name,
-  //         email,
-  //         message,
-  //       }),
-  //       headers: {
-  //         'Content-Type': "application/json",
-  //       },
-  //     });
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  //     if (res.ok) {
-  //       console.log('Form submitted successfully');
-  //     } else {
-  //       const errorData = await res.json();
-  //       console.error('Error submitting form:', errorData);
-  //     }
-  //   } catch (err) {
-  //     console.error('Error submitting form:', err);
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
 
-  async function sendEmail() {
-     try{ await fetch('/api/contact', {
+    try {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-         'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({name, email, message}) 
-      })
-      setName('');
-      setEmail('');
-      setMessage('');
-     }catch(e){
-      console.error(e);
-     }
-  }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSuccess('Message sent successfully!');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      setError('Failed to send message. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <form className={styles.form}>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        className={styles.formInput}
-        type="text"
-        placeholder="NAME"
-        required
-      />
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={`${styles.formInput} ${styles.mt5}`}
-        type="email"
-        placeholder="EMAIL"
-        required
-      />
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        className={`${styles.formInput} ${styles.mt5}`}
-        placeholder="MESSAGE"
-        rows="4"
-        cols="50"
-        required
-      />
-      <button type="submit" className={styles.submitButton} onClick={sendEmail}>
-        SEND ME A MESSAGE
-      </button>
-    </form>
+    <form onSubmit={handleSubmit} className={styles.formContainer}>
+    <input
+      type="text"
+      name="name"
+      value={formData.name}
+      onChange={handleChange}
+      placeholder="Name"
+      className={styles.inputField}
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      value={formData.email}
+      onChange={handleChange}
+      placeholder="Email"
+      className={styles.inputField}
+      required
+    />
+    <input
+      type="text"
+      name="subject"
+      value={formData.subject}
+      onChange={handleChange}
+      placeholder="Subject"
+      className={styles.inputField}
+      required
+    />
+    <textarea
+      name="message"
+      value={formData.message}
+      onChange={handleChange}
+      placeholder="Your message"
+      className={styles.textareaField}
+      required
+    />
+    <button
+      type="submit"
+      disabled={loading}
+      className={styles.submitButton}
+    >
+      {loading ? 'Sending...' : 'Send Message'}
+    </button>
+    {error && <p className={styles.errorMessage}>{error}</p>}
+    {success && <p className={styles.successMessage}>{success}</p>}
+  </form>
   );
-}
+};
 
 export default ContactForm;

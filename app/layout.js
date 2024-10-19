@@ -6,6 +6,9 @@ import 'slick-carousel/slick/slick.css'; // Slick Carousel core CSS
 import 'slick-carousel/slick/slick-theme.css'; // Slick Carousel theme CSS
 import Main from "./Main";
 import { ThemeProvider } from "./context/themeContext";
+import { ChakraProvider } from "@chakra-ui/react";
+// import theme from "../config/theme"; 
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <ChakraProvider>
       <ThemeProvider>
        <Main>
        <Navbar/>
@@ -34,6 +38,7 @@ export default function RootLayout({ children }) {
         <Footer/>
        </Main>
        </ThemeProvider>
+       </ChakraProvider>
       </body>
     </html>
   );
