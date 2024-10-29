@@ -13,7 +13,7 @@ const page = () => {
           <Image src={AboutImage} alt=''/>
         </article>
         <article className={styles.aboutContent}>
-          <h4>Hi, I am Murain Sikirulah. I am a developer with three years of experience</h4>
+          <h4>Hi, I am Muraina S.B. I am a developer with three years of experience</h4>
           <p>I started my coding journey about three years ago. And I have executed many projects which actually affirm my proficience in the latest technology. I am so convinient using React and Next.js to bring the concept into live </p>
           <p>With my nature of fast learning ability, I can easily adapt to the emerging latest technoloy. I am commited to giving the best to whatever I do in rendering and in support to grow</p>
           <a href="../assets/cv.pdf" className={`btn primary ${styles.aboutCta}`} download rel='noopener noreferrer'>Download cv</a>
